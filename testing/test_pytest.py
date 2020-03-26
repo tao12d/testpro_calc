@@ -60,8 +60,11 @@ class TestCalc:
 
     # 除法中不能被整除
     def test_div7(self):
-        assert self.calc.div(4, 3) == 1.33
+        assert self.calc.div(5, 3) != 1.666
 
     # 除法中第二位数不能为0
     def test_div8(self):
-        assert self.calc.div(2, 0) == "ZeroDivisionError: division by zero"
+        try:
+            self.calc.div(3, 0)
+        except Exception as error:
+            print(error)
